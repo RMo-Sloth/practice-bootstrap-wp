@@ -18,8 +18,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- NAVWALKER ?? -->
-
+      <?php wp_nav_menu( array(
+          'theme_location'  => 'primary',
+          'depth'           => 2,
+          'container'       => false,
+          'menu_class'      => 'nav navbar-nav',
+          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'          => new WP_Bootstrap_Navwalker(),
+      ) ); ?>
       <form class="d-flex">
 
       </form>
