@@ -43,13 +43,18 @@
                   <?php the_title( 'h1', 'h1' ); ?>
                 </div>
               </div>
-<!--  the_post(); -->
             <?php endwhile;
           endif;
         ?>
       </div>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <?php 
+        if( is_active_sidebar( 'sidebar' ) ):
+          dynamic_sidebar( 'sidebar' );
+        endif;
+      ?>
+    </div>
   </div>
 </div>
   <?php wp_footer(); ?>
